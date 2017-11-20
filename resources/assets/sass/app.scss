@@ -5,5 +5,14 @@
 // Variables
 @import "variables";
 
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+// Bulma
+@import "~bulma/bulma";
+
+// Buefy
+@import "~buefy/lib/buefy.min.css";
+
+// Custom styles
+@import "custom/overrides";
+@import "custom/helpers";
+@import "custom/general_settings";
+@import "custom/styles";
