@@ -13,49 +13,47 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('styles')
+    <style>
+
+    </style>
 </head>
 <body>
 <div id="app">
-    <header class="nav-header has-border">
-        <div class="navbar is-transparent">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="#">
-                        <span class="title is-size-4-desktop is-size-5-touch">Laravel - Bulma</span>
-                    </a>
+    <header class="navbar is-transparent">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <span class="title is-size-4-desktop is-size-5-touch">Laravel - Bulma</span>
+                </a>
 
-                    <button class="button navbar-burger" data-target="navMenu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
+                <button class="button navbar-burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <div class="navbar-menu" id="navMenu">
+                <div class="navbar-start">
+                    {{--content--}}
                 </div>
-
-                <div class="navbar-menu" id="navMenu">
-                    <div class="navbar-start">
-                        {{--content--}}
-                    </div>
-                    <div class="navbar-end">
-                        @guest
+                <div class="navbar-end">
+                    @guest
                         <a href="{{ route('login') }}" class="navbar-item">Login</a>
                         <a href="{{ route('register') }}" class="navbar-item">Register</a>
-                        @else
-                            <div class="navbar-item has-dropdown is-hoverable">
-                                <a class="navbar-link">Howdy {{ Auth::user()->name }}</a>
-
-                                <div class="navbar-dropdown">
-                                    <a href="" class="navbar-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </div>
-                            </div>
-                        @endguest
-                    </div>
+                    @else
+                        <p class="navbar-item">{{ Auth::user()->email }}</p>
+                        <div class="navbar-item">
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </div>
+                    @endguest
                 </div>
-            </div>{{--container ends--}}
-        </div>{{--navbar ends--}}
-    </header>{{--header ends--}}
+            </div>
+        </div>{{--container ends--}}
+    </header>{{--header and navbar end--}}
 
     <main>
         <div class="container">

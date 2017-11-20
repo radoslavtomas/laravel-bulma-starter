@@ -11851,3 +11851,22 @@ Credit: https://gist.github.com/jacurtis/30da4bf9a6c9b9b5cc0aebac512ca7c9
           box-shadow: 0 0 1px rgba(57, 70, 78, 0.15), 0 20px 55px -8px rgba(57, 70, 78, 0.25);
 }
 
+/* Navigation
+------------------------------------ */
+
+.navbar {
+  border-bottom: 1px solid #ccc;
+}
+
+.navbar .navbar-burger {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.navbar .button:focus:not(:active),
+.navbar .button.is-focused:not(:active) {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
